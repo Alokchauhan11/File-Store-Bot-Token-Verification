@@ -77,11 +77,11 @@ TUT_VID = os.environ.get("TUT_VID","https://t.me/How_to_Download_7x/32")
 
 #Payment to remove the token system
 #put TRUE if you want this feature
-USE_PAYMENT = True if (os.environ.get("USE_PAYMENT", "FALSE") == "TRUE") & (USE_SHORTLINK) else False
+USE_PAYMENT = True if (os.environ.get("USE_PAYMENT", "True") == "TRUE") & (USE_SHORTLINK) else False
 #UPI ID
-UPI_ID = os.environ.get("UPI_ID", " ")
+UPI_ID = os.environ.get("UPI_ID", "Rexonblack@paytm")
 #UPI QR CODE IMAGE
-UPI_IMAGE_URL = os.environ.get("UPI_IMAGE_URL", "")
+UPI_IMAGE_URL = os.environ.get("UPI_IMAGE_URL", "https://graph.org/file/7a97a7bbc11becbf7e207.jpg")
 #SCREENSHOT URL of ADMIN for verification of payments
 SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", "")
 #Time and its price
