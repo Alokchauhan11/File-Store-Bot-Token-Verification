@@ -62,10 +62,10 @@ https://dashboard.shareus.io/
 
 # Turn this feature on or off using True or False put value inside  ""
 # TRUE for yes FALSE if no 
-USE_SHORTLINK = True if os.environ.get('USE_SHORTLINK', "FALSE") == "TRUE" else False 
+USE_SHORTLINK = True if os.environ.get('USE_SHORTLINK', "TRUE") == "TRUE" else False 
 # only shareus service known rightnow rest you can test on your own
-SHORTLINK_API_URL = os.environ.get("SHORTLINK_API_URL", "api.shareus.io")
-# SHORTLINK_API_KEY = os.environ.get("SHORTLINK_API_KEY", "")
+SHORTLINK_API_URL = os.environ.get("SHORTLINK_API_URL", "https://publicearn.com")
+# SHORTLINK_API_KEY = os.environ.get("SHORTLINK_API_KEY", "0da405cf25079ea7b97d4095248439d88d77616e")
 #use this key if not working ☠️ (jokin!!)
 SHORTLINK_API_KEY = os.environ.get("SHORTLINK_API_KEY", "")
 #add your custom time in secs for shortlink expiration.
@@ -73,7 +73,7 @@ SHORTLINK_API_KEY = os.environ.get("SHORTLINK_API_KEY", "")
 # 12hr = 43200
 VERIFY_EXPIRE = int(os.environ.get('VERIFY_EXPIRE', "86400")) # Add time in seconds
 #Tutorial video for the user of your shortner on how to download.
-TUT_VID = os.environ.get("TUT_VID","https://t.me/How_to_Download_7x/32")
+TUT_VID = os.environ.get("TUT_VID","https://t.me/rexonblacksupport/1242")
 
 #Payment to remove the token system
 #put TRUE if you want this feature
@@ -81,7 +81,7 @@ USE_PAYMENT = True if (os.environ.get("USE_PAYMENT", "True") == "TRUE") & (USE_S
 #UPI ID
 UPI_ID = os.environ.get("UPI_ID", "Rexonblack@paytm")
 #UPI QR CODE IMAGE
-UPI_IMAGE_URL = os.environ.get("UPI_IMAGE_URL", "https://graph.org/file/7a97a7bbc11becbf7e207.jpg")
+UPI_IMAGE_URL = os.environ.get("UPI_IMAGE_URL", "https://graph.org/file/85f994535fad21d506903.jpg")
 #SCREENSHOT URL of ADMIN for verification of payments
 SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", "")
 #Time and its price
