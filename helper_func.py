@@ -87,21 +87,30 @@ async def get_message_id(client, message):
     elif message.forward_sender_name:
         return 0
     elif message.text:
-        pattern = r"https://t.me/(?:c/)?(.*)/(\d+)"
-        matches = re.match(pattern,message.text)
-        if not matches:
-            return 0
-        channel_id = matches.group(1)
-        msg_id = int(matches.group(2))
-        if channel_id.isdigit():
-            if f"-100{channel_id}" == str(client.db_channel.id):
-                return msg_id
-        else:
-            if channel_id == client.db_channel.username:
-                return msg_id
-    else:
-        return 0
+    # Pattern to match Telegram message links, e.g., https://t.me/channel/12345
+    pattern = r"https://t.me/(?:c/)?(.*)/(\d+)"
+    matches = re.match(pattern, message.text)
+    
+    if not matches:
+        return 0  # No match found, return 0
 
+    channel_id = matches.group(1)
+    msg_id = int(matches.group(2))
+
+    # Check if the extracted channel_id is numeric
+    if channel_id.isdigit():
+        # Construct full channel ID for comparison
+        expected_channel_id = f"-100{channel_id}"
+        if expected_channel_id == str(client.db_channel.id):
+            return msg_id
+        else:
+            return 0
+    else:
+        # Non-numeric channel ID; treat as a username
+        if channel_id == client.db_channel.username:
+            return msg_id
+        else:
+            return 0
 
 def get_readable_time(seconds: int) -> str:
     count = 0
